@@ -1,0 +1,171 @@
+.sidebar {
+  padding-right: 0;
+  padding-left: 0;
+  min-height: 100%;
+  position: static;
+  top: auto;
+  z-index: auto;
+  height: auto;
+  background-color: $blue-dark;
+  color: $grey-light;
+  width: 250px;
+  transition: width .3s ease-in;
+  max-width: 100%;
+  flex: 0 0 auto;
+
+  &-navigation {
+    min-height: calc(100vh - 65px);
+    padding-left: 0;
+    margin-bottom: 0;
+
+    &__item {
+      opacity: 1;
+      transition: opacity.2s ease-in;
+      white-space: nowrap;
+      overflow: hidden;
+      @include size(100%,100%);
+      @include flex(row);
+      @include flex-param();
+      padding: 0.85714rem 1.07143rem;
+
+      .wrap {
+        @include flex();
+        align-items: center;
+      }
+
+      &-wrap {
+        background-color: transparent;
+        transition: background-color .2s ease-in;
+        overflow: hidden;
+        position: relative;
+        list-style: none;
+        color: $grey-light;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+
+        &.active {
+          background-color: $blue-darkest-1;
+
+          .sidebar-navigation__item {
+            &-title {
+              color: $white;
+            }
+
+            &-image {
+              svg {
+                fill: $white;
+              }
+            }
+          }
+        }
+
+        &:hover {
+          background-color: $blue-darkest-1;
+
+          .sidebar-navigation__item {
+            &-title {
+              color: $pink;
+            }
+
+            &-image {
+              svg {
+                fill: $pink;
+              }
+            }
+          }
+        }
+
+        &.expanded {
+          background: $blue-darkest-1;
+
+          &:hover {
+            .sidebar-navigation__item {
+              &-title {
+                color: $grey-light;
+              }
+
+              &-image {
+                svg {
+                  fill: $blue-lighter;
+                }
+              }
+            }
+          }
+
+          .sidebar-navigation__list-item {
+            &:hover {
+              .sidebar-navigation__list-item {
+                &-title {
+                  color: $pink;
+                }
+
+                &-image {
+                  svg {
+                    fill: $pink;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &-image {
+        margin-right: 18px;
+
+        svg {
+          @include size(18px,18px);
+          fill: $blue-lighter;
+        }
+      }
+
+      &-title {
+        @include size(170px);
+        color: $grey-light;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 14px;
+      }
+
+      &-arrow {
+        svg.arrow {
+          transform: rotate(-90deg);
+          fill: $grey-light;
+          @include size(12px,12px);
+        }
+      }
+    }
+
+    &__list {
+      padding-left: 20px;
+
+      &-item {
+        padding: .85714rem 1.07143rem;
+        width: 100%;
+        @include flex(row);
+        align-items: center;
+
+        &-image {
+          margin-right: 15px;
+
+          svg {
+            fill: $blue-lighter;
+            @include size(14px,14px);
+          }
+        }
+
+        &-title {
+          color: $grey-light;
+          font-size: 13px;
+          max-width: calc(100% - 31px);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

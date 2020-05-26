@@ -1,0 +1,26 @@
+.page {
+  &-header {
+    background: #f5f9f9;
+    padding: 20px;
+
+    .title {
+      color: #53585e;
+      font-size: 14px;
+    }
+  }
+
+  &-title {
+    font-size: 28px;
+    font-weight: 300;
+  }
+
+  &__wrapper {
+    padding: 20px;
+
+    .main-row {
+      @include flex();
+      @include flex-param();
+      margin-bottom: 30px;
+    }
+  }
+}

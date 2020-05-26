@@ -1,0 +1,57 @@
+#root {
+  min-height: 100vh;
+  min-width: 100vw;
+  @include flex(column);
+  background-color: $white;
+  overflow-x: auto;
+}
+
+.main {
+  padding-top: 65px !important;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+
+  &-wrap {
+    overflow: hidden;
+    position: relative;
+    margin-right: 0;
+    margin-left: 0;
+    @include flex(row,wrap);
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.menu {
+  width: 250px;
+  min-height: 100%;
+  transition: width .3s ease-in;
+}
+
+.wrapper {
+  width: calc(100vw - 250px);
+  min-height: calc(100vh - 65px);
+  @include flex(column);
+  position: relative;
+}
+
+.button {
+  height: 42px;
+  border-radius: 14px;
+  padding: 0 16px;
+
+  &._xs {
+    background-color: green;
+  }
+
+  &._green {
+    background-color: aliceblue;
+  }
+}
+
+input {
+  outline: none;
+}

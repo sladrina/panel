@@ -1,0 +1,14 @@
+.footer {
+  @include size(100%);
+  @include flex();
+  padding: 20px 40px 20px 20px;
+  @include flex-param(center, flex-end);
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid $grey-bright;
+
+  .text {
+    font-size: 14px;
+    color: $grey;
+  }
+}

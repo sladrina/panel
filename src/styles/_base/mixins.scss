@@ -1,0 +1,42 @@
+//Size
+@mixin size($width, $height: null) {
+  width: $width;
+  height: $height;
+}
+
+//Font
+@mixin font($font-size, $font-weight: 400, $line-height: 1.2, $font-family: $stem, $letter-spacing: normal) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  font-family: $font-family;
+  letter-spacing: $letter-spacing;
+}
+
+//Flex-box
+@mixin flex($flex-direction: row, $flex-wrap: nowrap, $flex-display: flex) {
+  display: $flex-display;
+  flex-direction: $flex-direction;
+  flex-wrap: $flex-wrap;
+}
+
+@mixin flex-param($align-items: center, $justify-content: space-between) {
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+//Placeholder stylization
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}

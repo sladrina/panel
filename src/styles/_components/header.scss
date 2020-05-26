@@ -1,0 +1,157 @@
+.header {
+  font-size: 0.92857rem;
+  position: fixed;
+  top: 0;
+  bottom: auto;
+  left: 0;
+  right: 0;
+  @include size(100%);
+  z-index: 501;
+
+  &-wrap {
+    max-height: 4.64286rem;
+    font-size: 0.92857rem;
+    color: $white;
+    z-index: 5;
+    position: relative;
+    background: $blue-darkest;
+  }
+
+  &-menu {
+    @include flex(row,wrap);
+    @include flex-param();
+    margin: 0;
+    padding: 0;
+    color: $white;
+    @include size(100%,65px);
+    padding-right: 20px;
+  }
+
+  &-logo {
+    &_wrap {
+      @include size(250px,65px);
+      background: $blue-dark;
+      padding: 0.85714rem 1.07143rem;
+      overflow: hidden;
+      transition: all .3s ease-in;
+      @include flex(row,wrap);
+      @include flex-param();
+    }
+
+    svg {
+      @include size(40px,40px);
+      fill: $white;
+    }
+
+    &_toggler {
+      svg {
+        @include size(21px,32px);
+      }
+    }
+  }
+
+  &-user {
+    @include flex(row);
+    padding: 0 22px;
+    flex: 0 0 auto;
+    align-items: center;
+    width: auto;
+    max-width: 100%;
+    position: relative;
+
+    &_dropdown {
+      /*
+      visibility: hidden;
+      */
+      position: absolute;
+      top: 59px;
+      left: 0;
+      opacity: 1;
+      background-color: $blue-dark;
+      color: $grey-light;
+      list-style: none;
+      padding: 1rem 0;
+      animation-duration: 300ms;
+      @include size(calc(100% - 40px),100%);
+      margin-left: 22px;
+      min-height: 58px;
+      border-radius: .25rem;
+
+      &-item {
+        margin-bottom: 0.71429rem;
+
+        .description {
+          padding: 0.35714rem 1.42857rem;
+          @include flex(row);
+          align-items: flex-start;
+        }
+
+        .image {
+          margin-right: 0.85714rem;
+
+          svg {
+            fill: $blue-light;
+          }
+        }
+
+        .title {
+          color: $grey-light;
+          align-self: center;
+          @include size(calc(100% - 28px));
+          display: inline-block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          font-size: 14px;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &:hover {
+          .title {
+            color: $pink;
+          }
+        }
+      }
+    }
+
+    &_profile {
+      @include flex(row);
+      justify-content: center;
+
+      &-wrap {
+        position: relative;
+
+        svg {
+          @include size(38px,38px);
+          border-radius: 50%;
+          fill: $white;
+          margin-right: 0.71429rem;
+        }
+      }
+
+      &-select {
+        @include flex();
+        @include flex-param();
+
+        .name {
+          font-size: 0.812rem;
+          color: $white;
+          @include size(96px);
+          display: inline-block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        svg {
+          fill: $blue-lighter-1;
+          @include size(12px,12px);
+          margin-left: 0.71429rem;
+        }
+      }
+    }
+  }
+}

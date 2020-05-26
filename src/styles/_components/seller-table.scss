@@ -1,0 +1,164 @@
+.seller-table {
+  @include size(100%);
+  margin-bottom: 0;
+  border-collapse: collapse;
+  border-spacing: 2px;
+  color: $black;
+
+  &__wrapper {
+    @include size(100%,100%);
+    min-height: 387px;
+    display: block;
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+    margin-bottom: 40px;
+  }
+
+  tr {
+    border: 1px solid $grey-bright;
+
+    th {
+      vertical-align: bottom;
+      padding: 20px;
+      font-size: 14px;
+      font-weight: 400;
+      text-align: left;
+    }
+
+    td {
+      font-weight: 300;
+      padding: 16px 20px;
+      vertical-align: middle;
+    }
+  }
+
+  &__more {
+    display: inline-block;
+    position: relative;
+    top: .21429rem;
+
+    .more {
+      cursor: pointer;
+
+      svg {
+        fill: #bac9c9;
+        @include size(24px,33px);
+        transition: $transition;
+
+        &:hover {
+          fill: #1cc9e4;
+        }
+      }
+    }
+
+    .actions {
+      opacity: 0;
+      visibility: hidden;
+      list-style: none;
+      @include size(150px);
+      padding-left: 0;
+      z-index: 2;
+      background: $white;
+      font-weight: 300;
+      animation-duration: 300ms;
+      position: absolute;
+      right: 0;
+      box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .1);
+      -webkit-transition: opacity 300ms ease-in;
+      -moz-transition: opacity 300ms ease-in;
+      -o-transition: opacity 300ms ease-in;
+      -ms-transition: opacity 300ms ease-in;
+      transition: opacity 300ms ease-in;
+
+      &-list {
+        opacity: 0;
+        visibility: hidden;
+        margin-bottom: 0;
+        list-style: none;
+        @include size(100%);
+        -webkit-transition: opacity 300ms ease-in;
+        -moz-transition: opacity 300ms ease-in;
+        -o-transition: opacity 300ms ease-in;
+        -ms-transition: opacity 300ms ease-in;
+        transition: opacity 300ms ease-in;
+
+        li {
+          display: none;
+          padding: 14px 17px;
+          cursor: pointer;
+          -webkit-transition: opacity 300ms ease-in;
+          -moz-transition: opacity 300ms ease-in;
+          -o-transition: opacity 300ms ease-in;
+          -ms-transition: opacity 300ms ease-in;
+          transition: opacity 300ms ease-in;
+
+          &:hover {
+            background: #f5f9f9;
+          }
+        }
+
+        &__item {
+          color: $grey;
+          font-weight: 300;
+          outline: none;
+          text-decoration: none;
+          transition: all .2s;
+          @include flex();
+          align-items: center;
+
+          svg.item {
+            fill: #babec4;
+            margin-right: 9px;
+          }
+
+          span {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+
+    &.active {
+      svg {
+        fill: #1cc9e4;
+      }
+
+      .actions {
+        opacity: 1;
+        visibility: visible;
+
+        &-list {
+          opacity: 1;
+          visibility: visible;
+
+          li {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  .button {
+    &-status {
+      @include size(110px,32px);
+      border-radius: 20px;
+      @include flex();
+      @include flex-param(center, center);
+      color: white;
+      background: #15d3b2;
+
+      &.offline {
+        background: #e62154;
+      }
+
+      &.online {
+        background: #15d3b2;
+      }
+
+      &.away {
+        background: #e6a821;
+      }
+    }
+  }
+}
